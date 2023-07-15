@@ -10,7 +10,9 @@ import { useAuth } from '../contexts/AuthContext';
 import { DateTimePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from 'dayjs';
+import Sidebar from './Sidebar';
 
+const drawerWidth = 260
 function Add() {
   const [data, setData] = useState({ 'title': '' })
   const [file, setFile] = useState()
@@ -55,6 +57,7 @@ function Add() {
   function handleUpload() {
     if (!file) {
       alert('No file selected!')
+      return
     }
     setUploading(true);
     for (var i = 0; i < file.length; i++) {
@@ -78,25 +81,30 @@ function Add() {
   }
 
   return (
-    <div style={{ fontSize: '14px' }}>
-      <center>
-        <h1>ADD PROBLEM</h1>
+    <Box sx={{ display: 'flex' }}>
+      <Sidebar />
+      <Box component="main" sx={{ marginTop: '50px', flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}>
+        <div style={{ fontSize: '14px' }}>
+          <center>
+            <h1>ADD PROBLEM</h1>
 
-        <TextField placeholder="title" onChange={handleChange} name="title" value={data.title} />
+            <TextField placeholder="title" onChange={handleChange} name="title" value={data.title} />
 
-        {uploading &&
-          <div style={{marginTop: '30px'}}>
-            Uploading file {fileNo} <br /><br />
-            <LinearProgress sx={{ width: '50vw' }} variant="determinate" value={percent} />
-          </div>
-        }
-        <br />
-        <br />
-        <input type="file" onChange={handleFileChange} multiple='multiple' /><br />
-        <br/>
-        <Button size="large" variant='contained' onClick={handleUpload}>UPLOAD</Button>
-      </center>
-    </div>
+            {uploading &&
+              <div style={{ marginTop: '30px' }}>
+                Uploading file {fileNo} <br /><br />
+                <LinearProgress sx={{ width: '50vw' }} variant="determinate" value={percent} />
+              </div>
+            }
+            <br />
+            <br />
+            <input type="file" onChange={handleFileChange} multiple='multiple' /><br />
+            <br />
+            <Button size="large" variant='contained' onClick={handleUpload}>UPLOAD</Button>
+          </center>
+        </div>
+      </Box>
+    </Box >
   )
 }
 

@@ -27,6 +27,7 @@ import Container from '@mui/material/Container';
 import GetAppIcon from '@mui/icons-material/GetApp';
 import DescriptionIcon from '@mui/icons-material/Description';
 import '../App.css'
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const drawerWidth = 260;
 
@@ -44,7 +45,7 @@ function Sidebar() {
     const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
 
     function handleSidebar(e, dir) {
-        if(dir !== 'undefined') {
+        if (dir !== 'undefined') {
             console.log('Sidebar redirecting to /' + dir)
             history.push('/' + dir)
         }
@@ -85,43 +86,49 @@ function Sidebar() {
             </ListItem> */}
                 <ListItem disablePadding>
                     <Box sx={{ width: '100%', height: '8em' }}>
-                        <Box  sx={{ margin: 'auto', marginTop:'10px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize:'40px' }}>
+                        <Box sx={{ margin: 'auto', marginTop: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '40px' }}>
                             <span className='litcode'>LitCode</span>
                         </Box>
                     </Box>
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e,'home')}>
-                        <Box sx={{ marginLeft:'10px', display: 'flex', alignItems: 'center' }}>
+                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e, 'home')}>
+                        <Box sx={{ marginLeft: '10px', display: 'flex', alignItems: 'center' }}>
                             <Home style={{ fontSize: '1.5em' }} />&nbsp;HOME
                         </Box>
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e,'problemset')}>
-                        <Box sx={{ marginLeft:'10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e, 'problemset')}>
+                        <Box sx={{ marginLeft: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <DescriptionIcon style={{ fontSize: '1.5em' }} />&nbsp;PROBLEMSET
                         </Box>
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e,'download-client')}>
-                        <Box sx={{ marginLeft:'10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e, 'download-client')}>
+                        <Box sx={{ marginLeft: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <GetAppIcon style={{ fontSize: '1.5em' }} />&nbsp;DOWNLOAD CLIENT
                         </Box>
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e,'export-import')}>
-                        <Box sx={{ marginLeft:'10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e, 'export-import')}>
+                        <Box sx={{ marginLeft: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <GetAppIcon style={{ fontSize: '1.5em' }} />&nbsp;EXPORT / IMPORT
                         </Box>
                     </ListItemButton>
                 </ListItem>
-
                 <ListItem disablePadding>
-                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e,'logout')}>
-                        <Box sx={{ marginLeft:'10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e, 'add')}>
+                        <Box sx={{ marginLeft: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <AddCircleIcon style={{ fontSize: '1.5em' }} />&nbsp;ADD PROBLEM
+                        </Box>
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton sx={{ width: '100%', height: '5em' }} onClick={(e) => handleSidebar(e, 'logout')}>
+                        <Box sx={{ marginLeft: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <Logout style={{ fontSize: '1.5em' }} />&nbsp;LOGOUT
                         </Box>
                     </ListItemButton>

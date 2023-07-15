@@ -30,8 +30,8 @@ export const setLocal = (key, value) => {
     localStorage.setItem(x, value)
 }
 export async function getDataFromFile(title, file) {
-    const resource = ref(storage, '/problems/' + title + '/' + file)
     if(getLocalCached(title + '_' + file)) return getLocalCached(title + '_' + file)
+    const resource = ref(storage, '/problems/' + title + '/' + file)
     try {
         const url = await getDownloadURL(resource)
         const data = await fetch(url)

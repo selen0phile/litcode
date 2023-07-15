@@ -16,6 +16,7 @@ import Home from "./components/Home"
 import Download from "./components/Download"
 import ExportImport from "./components/ExportImport"
 
+
 const config = {
   loader: { load: ["[tex]/html"] },
   tex: {
@@ -24,8 +25,8 @@ const config = {
     displayMath: [["\\(", "\\)"]]
   },
   "HTML-CSS": {
-    linebreaks: { automatic: true, width: "container" }          
-  } 
+    linebreaks: { automatic: true, width: "container" }
+  }
 }
 function App() {
   const [mode, setMode] = useState('dark')
@@ -70,5 +71,4 @@ function App() {
     </MathJaxContext>
   )
 }
-
 export default App
