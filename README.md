@@ -38,9 +38,11 @@ Preview
 ![image](https://github.com/selen0phile/litcode/assets/59266402/a21a5f92-e226-4451-930e-e8f151bf6f48)
 
 - A problem consists of:
-  **1. statement.txt: ** This file contains the problem statement. You can write mathjax equations here.
-  **2. constraints.txt: ** This file contains the constraints (just for a better understanding. you are encouraged to write constraints here instead of writing them inside the statement.txt). You can write mathjax equations here.
-  **3. meta.json: ** This is a json file of the following syntax:
+  ### 1. statement.txt
+  This file contains the problem statement. You can write mathjax equations here.
+  ### 2. constraints.txt
+  This file contains the constraints (just for a better understanding. you are encouraged to write constraints here instead of writing them inside the statement.txt). You can write mathjax equations here.
+  ### 3. meta.json
   ```json
   {
     "added":"7/1/2023, 11:55:00 PM",
@@ -49,8 +51,10 @@ Preview
     "link":"https://moodle.cse.buet.ac.bd/mod/assign/view.php?id=12686"
   }
   ```
-  **4. si_{x}.txt, so_{x}.txt: ** These are sample input and output file. $x$ is the test number. $1<=x<=10$
-  **5. in_{x}.txt, out_{x}.txt: ** These are hidden input and output file. $x$ is the test number. $1<=x<=10$
+  ### 4. si_{x}.txt, so_{x}.txt
+  These are sample input and output file. $x$ is the test number. $1<=x<=10$
+  ### 5. in_{x}.txt, out_{x}.txt
+  These are hidden input and output file. $x$ is the test number. $1<=x<=10$
 
 - To add a problem, you have to upload all these files together (select all these files together while uploading)
 - Only users with permission can add problems
